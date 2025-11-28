@@ -45,3 +45,25 @@ qemu-system-x86_64 \
 
     gcc --version
 ################################################################
+
+sudo nano /etc/default/grub
+
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash no5lvl"
+
+
+sudo update-grub
+
+
+sudo reboot
+
+egrep -c "(vmx|svm)" /proc/cpuinfo
+
+cat /sys/module/kvm_intel/parameters/nested
+#############################################################
+
+
+
+
+
+#########################################################################
