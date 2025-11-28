@@ -29,3 +29,19 @@ qemu-system-x86_64 \
 -machine accel=kvm -cpu host      (on localhost)
 
 #########################################################
+
+
+
+################# ON VMWARE ###################################
+# this is for installing vmware workstation #####################
+### when installing vm on ubuntu #############################
+
+    sudo apt update
+    sudo apt install build-essential
+
+    sudo apt install gcc-13
+
+    sudo apt install linux-headers-$(uname -r)
+
+    gcc --version
+################################################################
