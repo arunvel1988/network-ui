@@ -28,3 +28,18 @@ sudo tce-update
 tce-load -wi python3
 ##################################
 
+Router> enable
+Router# configure terminal
+Router(config)# hostname Cisco-8000V
+Router(config)# ip domain-name example.com
+Router(config)# crypto key generate rsa usage-keys label ssh-key modulus 2048
+Router(config)# ip ssh version 2
+Router(config)# username admin privilege 15 secret your_password
+Router(config)# line vty 0 4
+Router(config-line)# transport input ssh
+Router(config-line)# login local
+Router(config-line)# exit
+
+Router# write memory
+#######################################################################
+
