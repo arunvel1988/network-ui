@@ -1,3 +1,4 @@
+## this is for tiny core linux #############
 ##### on cisco router side ###############
 sudo ifconfig eth0 10.0.0.2 netmask 255.255.255.0 up
 sudo route add default gw 10.0.0.1
@@ -6,6 +7,24 @@ sudo route add default gw 10.0.0.1
 
 ##### on cloud interface ###############
 sudo ifconfig eth1 172.18.0.10 netmask 255.255.0.0 up
-sudo route add default gw 172.18.0.3
+sudo route add default gw 172.18.0.1
 
 ############################################################
+
+
+### set dns ###############
+
+sudo vi /etc/resolv.conf
+
+
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+
+############################################
+## instaling python ##############
+sudo tce-update
+
+tce-load -wi python3
+##################################
+
