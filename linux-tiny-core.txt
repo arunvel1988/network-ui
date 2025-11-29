@@ -1,0 +1,11 @@
+##### on cisco router side ###############
+sudo ifconfig eth0 10.0.0.1 netmask 255.255.255.0 up
+sudo route add default gw 10.0.0.1
+
+############################################################
+
+##### on cloud interface ###############
+sudo ifconfig eth0 172.18.0.10 netmask 255.255.0.0 up
+sudo route add default gw 172.18.0.3
+
+############################################################
