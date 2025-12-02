@@ -1,0 +1,9 @@
+interfaces:
+  - name: GigabitEthernet2
+    description: LAN
+    ip: 192.168.1.1
+    mask: 255.255.255.0
+  - name: GigabitEthernet3
+    description: DMZ
+    ip: 10.10.10.1
+    mask: 255.255.255.0
