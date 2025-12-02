@@ -1,0 +1,30 @@
+############################################################
+sudo vi /etc/netplan/01-netcfg.yaml
+
+
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: no
+      addresses:
+        - 10.0.0.2/24
+      
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+
+    eth1:
+      dhcp4: no
+      addresses:
+        - 172.18.0.10/16
+      # Do NOT set gateway on eth1 unless needed
+      # If this network also needs internet routing:
+      gateway4: 172.18.0.1
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+
+############################################################
+sudo netplan apply
+
+############################################################
+
