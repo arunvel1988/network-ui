@@ -1,0 +1,11 @@
+---
+- name: Get facts from Cisco 8000v
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Collect device facts
+      cisco.ios.ios_facts:
+
+    - name: Print hostname
+      debug:
+        msg: "Hostname: {{ ansible_net_hostname }}"
