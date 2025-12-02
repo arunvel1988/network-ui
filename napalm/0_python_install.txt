@@ -1,0 +1,28 @@
+###########################################################################
+wget https://www.python.org/ftp/python/3.10.14/Python-3.10.14.tgz
+tar -xvf Python-3.10.14.tgz
+cd Python-3.10.14
+
+
+./configure --prefix=$HOME/python310 --enable-optimizations
+
+
+make -j4
+make install
+
+
+echo 'export PATH=$HOME/python310/bin:$PATH' >> ~/.bashrc
+source ~/.bashrc
+
+python3.10 --version
+
+
+python3.10 -m venv netenv
+source netenv/bin/activate
+
+
+pip install --upgrade pip setuptools wheel
+pip install napalm ncclient paramiko requests
+
+
+################################################################################################
