@@ -1,0 +1,16 @@
+###### on linux ##################
+pip install ansible
+pip install "ansible-core>=2.14"
+
+
+
+ansible-galaxy collection install cisco.ios
+ansible-galaxy collection install ansible.netcommon
+###### on linux ##################
+
+
+############### on cisco router ######################
+configure terminal
+  netconf-yang
+end
+############### on cisco router ######################
