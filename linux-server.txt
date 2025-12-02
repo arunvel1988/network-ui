@@ -28,3 +28,51 @@ sudo netplan apply
 
 ############################################################
 
+#######################################################################
+python3 -m ensurepip --upgrade
+pip3 install paramiko
+####################################
+
+import paramiko
+import time
+
+# Router SSH details
+hostname = "192.168.1.1"  # IP address of the Cisco 8000V router
+username = "admin"        # SSH username
+password = "your_password"  # SSH password
+enable_password = "enable_password_here"  # Enable password
+
+# Establish SSH client
+client = paramiko.SSHClient()
+
+# Automatically add the router's SSH key (for first-time connection)
+client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+# Connect to the router
+client.connect(hostname, username=username, password=password)
+
+# Open an interactive session
+shell = client.invoke_shell()
+
+# Send the 'enable' command to enter privileged mode
+shell.send("enable\n")
+time.sleep(1)
+
+# Send the enable password
+shell.send(f"{enable_password}\n")
+time.sleep(1)
+
+# Now we can send the command you want to run in privileged mode
+shell.send("show version\n")
+time.sleep(2)
+
+# Read and print the output of the command
+output = shell.recv(5000).decode('utf-8')
+print(output)
+
+# Close the SSH connection
+client.close()
+
+##################
+
+
