@@ -37,10 +37,10 @@ import paramiko
 import time
 
 # Router SSH details
-hostname = "192.168.1.1"  # IP address of the Cisco 8000V router
+hostname = "10.0.0.1"  # IP address of the Cisco 8000V router
 username = "admin"        # SSH username
-password = "your_password"  # SSH password
-enable_password = "enable_password_here"  # Enable password
+password = "123"  # SSH password
+enable_password = "Ssjcoe12345678@#"  # Enable password
 
 # Establish SSH client
 client = paramiko.SSHClient()
