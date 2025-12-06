@@ -1,0 +1,12 @@
+:
+
+####on ubuntu host = 
+# sudo apt install tigervnc-viewer -y
+# vncviewer 172.18.0.3::<port_no>
+
+##########
+
+# on firefox gui 
+# sudo ip addr add 192.168.0.2/24 dev eth0
+# sudo ip link set eth0 up
+################
