@@ -1,5 +1,5 @@
-:
-
+:set ip on palo alto via cli
+set network interface ethernet ethernet1/1 layer3 ip 172.18.0.11/16
 ####on ubuntu host = 
 # sudo apt install tigervnc-viewer -y
 # vncviewer 172.18.0.3::<port_no>
