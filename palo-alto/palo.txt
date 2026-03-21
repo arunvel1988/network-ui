@@ -11,6 +11,10 @@ set network interface ethernet ethernet1/1 layer3 ip 172.18.0.11/16
 # sudo ip link set eth0 up
 ################
 
+on vpcs
+
+ip 10.0.0.2/24 10.0.0.1
+
 
 PALO ALTO AND VYOS
 
