@@ -10,3 +10,57 @@ set network interface ethernet ethernet1/1 layer3 ip 172.18.0.11/16
 # sudo ip addr add 192.168.0.2/24 dev eth0
 # sudo ip link set eth0 up
 ################
+
+
+PALO ALTO AND VYOS
+
+On vyos
+configure
+
+set interfaces ethernet eth0 address dhcp
+
+
+configure
+delete interfaces ethernet eth0 address dhcp
+commit
+
+set interfaces ethernet eth0 address dhcp
+commit
+set interfaces ethernet eth1 address 192.168.50.1/24
+
+set nat source rule 10 source address 192.168.50.0/24
+set nat source rule 10 outbound-interface name eth0
+set nat source rule 10 translation address masquerade
+
+set protocols static route 0.0.0.0/0 next-hop 192.168.122.1
+
+commit
+save
+
+
+
+
+
+
+
+
+
+
+########################################
+
+on palo alto 
+
+
+
+
+configure
+
+set network interface ethernet ethernet1/2 layer3 ip 192.168.50.2/24
+
+set network virtual-router default routing-table ip static-route default-route destination 0.0.0.0/0 nexthop ip-address 192.168.50.1
+
+commit
+
+ping source 192.168.50.2 host 8.8.8.8
+
+#############################################
