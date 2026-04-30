@@ -1,0 +1,2 @@
+sudo systemctl daemon-reexec
+sudo systemctl restart docker
