@@ -1,0 +1,4 @@
+sudo apt update
+sudo apt install tigervnc-viewer -y
+
+vncviewer 34.47.241.185:5901
